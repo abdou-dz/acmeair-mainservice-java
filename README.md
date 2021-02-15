@@ -17,11 +17,11 @@ $ yum install podman maven git -y
 
 $ mkdir acme-air
 $ cd acme-air
-$ git clone https://github.com/yigitpolat/acmeair-mainservice-java.git
-$ git clone https://github.com/yigitpolat/acmeair-authservice-java.git
-$ git clone https://github.com/yigitpolat/acmeair-customerservice-java.git
-$ git clone https://github.com/yigitpolat/acmeair-flightservice-java.git
-$ git clone https://github.com/yigitpolat/acmeair-bookingservice-java.git
+$ git clone https://github.com/abdou-dz/acmeair-mainservice-java.git
+$ git clone https://github.com/abdou-dz/acmeair-authservice-java.git
+$ git clone https://github.com/abdou-dz/acmeair-customerservice-java.git
+$ git clone https://github.com/abdou-dz/acmeair-flightservice-java.git
+$ git clone https://github.com/abdou-dzt/acmeair-bookingservice-java.git
 
 $ cd acmeair-mainservice-java
 $ mvn clean package
