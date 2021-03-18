@@ -25,8 +25,8 @@ echo "CPU Architecture=${CPU_ARCHITECTURE}"
 
 echo "========================"
 
-oc new-project acme-air-istio
-oc project acme-air-istio
+oc new-project acme-air
+oc project acme-air
 echo "========================"
 
 rm -rf ${MANIFESTS}
