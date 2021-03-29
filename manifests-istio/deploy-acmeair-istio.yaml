@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: main
-          image: IMAGE_NAME
+          image: quay.io/abdouibm/acme-mainservice:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9080
@@ -58,7 +58,7 @@ spec:
     spec:
       containers:
         - name: flight
-          image: IMAGE_NAME
+          image: quay.io/abdouibm/acme-flightservice:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9080
@@ -112,7 +112,7 @@ spec:
           - name: SECURE_SERVICE_CALLS
             value: 'true'
           name: booking
-          image: IMAGE_NAME
+          image: quay.io/abdouibm/acme-bookingservice:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9080
@@ -144,7 +144,7 @@ spec:
     spec:
       containers:
         - name: customer
-          image: IMAGE_NAME
+          image: quay.io/abdouibm/acme-customerservice:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9080
@@ -190,7 +190,7 @@ spec:
         - name: JVM_ARGS
           value: "-Dcom.acmeair.client.CustomerClient/mp-rest/url=http://customer:9080/customer"
         name: auth
-        image: IMAGE_NAME
+        image: quay.io/abdouibm/acme-authservice:latest
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 9080
@@ -232,7 +232,7 @@ spec:
         app: flight-db
     spec:
       containers:
-      - image: mongo:latest
+      - image: quay.io/abdouibm/mongo:latest
         name: flight-db
         ports:
         - containerPort: 27017
@@ -278,7 +278,7 @@ spec:
         app: booking-db
     spec:
       containers:
-      - image: mongo:latest
+      - image: quay.io/abdouibm/mongo:latest
         name: booking-db
         ports:
         - containerPort: 27017
@@ -324,7 +324,7 @@ spec:
         app: customer-db
     spec:
       containers:
-      - image: mongo:latest
+      - image: quay.io/abdouibm/mongo:latest
         name: customer-db
         ports:
         - containerPort: 27017
