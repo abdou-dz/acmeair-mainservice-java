@@ -49,7 +49,7 @@ curl -o deploy-acmeair-customerservice-java.yaml https://raw.githubusercontent.c
 
 # Flight service
 curl -o acmeair-flightservice-route.yaml https://raw.githubusercontent.com/abdou-dz/acmeair-flightservice-java/master/manifests-openshift/acmeair-flightservice-route.yaml
-curl -o deploy-acmeair-flightservice-java.yaml https://raw.githubusercontent.com/abdou-dz/acmeair-flightservice-java/master/manifests-openshift/deploy-acmeair-flightservice-java.yaml
+curl -o deploy-acmeair-flightservice-secu.yaml https://raw.githubusercontent.com/abdou-dz/acmeair-flightservice-java/master/manifests-openshift/deploy-acmeair-flightservice-secu.yaml
 
 # Booking service
 curl -o acmeair-bookingservice-route.yaml https://raw.githubusercontent.com/abdou-dz/acmeair-bookingservice-java/master/manifests-openshift/acmeair-bookingservice-route.yaml
