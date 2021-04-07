@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: acmeair-mainservice-java
-        image: quay.io/abdouibm/acme-mainservice-secu:latest
+        image: quay.io/abdouibm/acme-mainservice-sec:latest
         ports:
         - containerPort: 9080
         - containerPort: 9443
