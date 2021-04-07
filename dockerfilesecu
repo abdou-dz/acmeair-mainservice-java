@@ -22,12 +22,11 @@ RUN yum install -y \
     pkgconf-m4 \
     pkgconf-pkg-config \
     redhat-rpm-config \
-    gcc \
     openssl-devel.s390x 
 # Install cca library
-RUN wget http://public.dhe.ibm.com/security/cryptocards/pciecc3/CCA/Z/csulcca-${CCA_VERSION}-${CCA_VERSION_NUMBER}.s390x.rpm \
-    && rpm -i csulcca-${CCA_VERSION}-${CCA_VERSION_NUMBER}.s390x.rpm \
-    && rm csulcca-${CCA_VERSION}-${CCA_VERSION_NUMBER}.s390x.rpm
+RUN wget https://raw.githubusercontent.com/abdou-dz/acmeair-mainservice-java/master/csulcca-6.0.13-10.s390x.rpm \
+    && rpm -i csulcca-6.0.13-10.s390x.rpm \
+    && rm csulcca-6.0.13-10.s390x.rpm
 # Configure path for opencryptoki.module
 RUN mkdir -p /etc/pkcs11/modules \
     && echo "module: /usr/lib64/opencryptoki/libopencryptoki.so.0.0.0" > /etc/pkcs11/modules/opencryptoki.module
@@ -53,6 +52,3 @@ ARG CREATE_OPENJ9_SCC=true
 ENV OPENJ9_SCC=${CREATE_OPENJ9_SCC}
 
 RUN configure.sh
-
-
-
