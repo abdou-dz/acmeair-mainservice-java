@@ -37,7 +37,7 @@ echo "Downloading Acme-Air YAML files..."
 
 # Main service
 curl -o acmeair-mainservice-route.yaml https://raw.githubusercontent.com/abdou-dz/acmeair-mainservice-java/master/manifests-openshift/acmeair-mainservice-route.yaml
-curl -o deploy-acmeair-mainservice-java.yaml https://raw.githubusercontent.com/abdou-dz/acmeair-mainservice-java/master/manifests-openshift/deploy-acmeair-mainservice-java.yaml
+curl -o deploy-acmeair-mainservice-secu.yaml https://raw.githubusercontent.com/abdou-dz/acmeair-mainservice-java/master/manifests-openshift/deploy-acmeair-mainservice-secu.yaml
 
 # Auth service
 curl -o acmeair-authservice-route.yaml https://raw.githubusercontent.com/abdou-dz/acmeair-authservice-java/master/manifests-openshift/acmeair-authservice-route.yaml
