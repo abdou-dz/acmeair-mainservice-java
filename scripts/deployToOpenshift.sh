@@ -41,11 +41,11 @@ curl -o deploy-acmeair-mainservice-java.yaml https://raw.githubusercontent.com/a
 
 # Auth service
 curl -o acmeair-authservice-route.yaml https://raw.githubusercontent.com/abdou-dz/acmeair-authservice-java/master/manifests-openshift/acmeair-authservice-route.yaml
-curl -o deploy-acmeair-authservice-java.yaml https://raw.githubusercontent.com/abdou-dz/acmeair-authservice-java/master/manifests/deploy-acmeair-authservice-java.yaml
+curl -o deploy-acmeair-authservice-java.yaml https://raw.githubusercontent.com/abdou-dz/acmeair-authservice-java/master/manifests-openshift/deploy-acmeair-authservice-java.yaml
 
 # Customer service
 curl -o acmeair-customerservice-route.yaml https://raw.githubusercontent.com/abdou-dz/acmeair-customerservice-java/master/manifests-openshift/acmeair-customerservice-route.yaml
-curl -o deploy-acmeair-customerservice-java.yaml https://raw.githubusercontent.com/abdou-dz/acmeair-customerservice-java/master/manifests/deploy-acmeair-customerservice-java.yaml
+curl -o deploy-acmeair-customerservice-java.yaml https://raw.githubusercontent.com/abdou-dz/acmeair-customerservice-java/master/manifests-openshift/deploy-acmeair-customerservice-java.yaml
 
 # Flight service
 curl -o acmeair-flightservice-route.yaml https://raw.githubusercontent.com/abdou-dz/acmeair-flightservice-java/master/manifests-openshift/acmeair-flightservice-route.yaml
