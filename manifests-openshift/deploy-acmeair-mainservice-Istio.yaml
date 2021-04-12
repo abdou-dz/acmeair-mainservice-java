@@ -1,0 +1,54 @@
+###### Main Service ######
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: acmeair-mainservice
+  labels:
+    app.kubernetes.io/part-of: main-service
+    app: main
+    name: acmeair-mainservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: acmeair-main-deployment
+  template:
+    metadata:
+      labels:
+        app: main
+        name: acmeair-main-deployment
+        version: v1
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9080"
+        sidecar.istio.io/inject: 'true'
+    spec:
+      containers:
+      - name: acmeair-mainservice-java
+        image: quay.io/abdouibm/acme-mainservice-sec:latest
+        ports:
+        - containerPort: 9080
+        - containerPort: 9443
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 400m
+          requests:
+            cpu: 100m
+        env:
+        - name: USERNAME
+          value: admin
+        - name: PASSWORD
+          value: password
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: acmeair-main-service
+  labels:
+    app.kubernetes.io/part-of: main-service
+spec:
+  ports:
+    - port: 9080
+  selector:
+    name: acmeair-main-deployment
