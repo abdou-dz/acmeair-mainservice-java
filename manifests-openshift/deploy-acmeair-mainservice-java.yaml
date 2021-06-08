@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: acmeair-mainservice-java
-        image: quay.io/abdouibm/acmeair-mainservice-java-4.0:latest 
+        image: quay.io/abdouibm/acmeair-mainservice-java-3.3:new 
         ports:
         - containerPort: 9080
         - containerPort: 9443
@@ -35,6 +35,18 @@ spec:
           value: admin
         - name: PASSWORD
           value: password
+        - name: JAEGER_AGENT_HOST
+          value: jaeger-all-in-one-inmemory-agent
+        - name: JAEGER_AGENT_PORT
+          value: '6832'
+        - name: JAEGER_ENDPOINT
+          value: 'http://jaeger-all-in-one-inmemory-collector:14268/api/traces'
+        - name: ACCESS_LOGGING_ENABLED
+          value: 'false'
+        - name: TRACE_SPEC
+          value: '*=info'
+        - name: LOGGING_FORMAT
+          value: 'simple'
 ---
 apiVersion: v1
 kind: Service
