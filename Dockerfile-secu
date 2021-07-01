@@ -38,6 +38,19 @@ RUN git clone https://github.com/opencryptoki/libica.git \
     && ./configure \
     && make \
     && make install
+===========================================================
+CPACF ENABLEMENT STUFF
+===========================================================
+ENV BUILD_DEPS='libica-utils openssl libssl-dev openssl-ibmca'
+RUN set -x \
+&&  apt-get update \
+&&  apt-get install -y $BUILD_DEPS --no-install-recommends \
+&&  rm -rf /var/lib/apt/lists/* \
+&&  apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false
+RUN set -x \
+&&  tee -a /etc/pki/tls/openssl.cnf < /usr/share/doc/openssl-ibmca/examples/openssl.cnf.sample\
+&&  sed -i -r 's/openssl_conf = default_conf/openssl_conf = openssl_def/' /etc/pki/tls/openssl.cnf
+====================================================================
 
 COPY --chown=1001:0 src/main/liberty/config/server.xml /config/server.xml
 COPY --chown=1001:0 src/main/liberty/config/server.env /config/server.env
